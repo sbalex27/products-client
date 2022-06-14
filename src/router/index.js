@@ -35,6 +35,12 @@ const routes = [
     component: () => import('../views/brands/BrandsView.vue'),
   },
   {
+    path: '/brands/:id',
+    name: 'brand-details',
+    component: () => import('../views/brands/BrandDetailsView.vue'),
+    props: true
+  },
+  {
     path: '/categories',
     name: 'categories',
     component: () => import('../views/categories/CategoriesView.vue')

@@ -16,16 +16,20 @@
     <b-container>
       <!-- Body -->
       <products-screen></products-screen>
+      <brands-screen></brands-screen>
+      <categories-screen></categories-screen>
       <b-button variant="primary">Hello World</b-button>
     </b-container>
   </div>
 </template>
 
 <script>
+import BrandsScreen from './components/BrandsScreen.vue';
+import CategoriesScreen from './components/CategoriesScreen.vue';
 import ProductsScreen from "./components/ProductsScreen.vue";
 export default {
   name: "App",
-  components: { ProductsScreen },
+  components: { ProductsScreen, BrandsScreen, CategoriesScreen },
 };
 </script>
 

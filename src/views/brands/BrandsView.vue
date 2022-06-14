@@ -1,11 +1,12 @@
 <template>
-  <h1>Categories</h1>
-
+  <div>
+    <h1>Brands</h1>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "CategoriesScreen"
+
 }
 </script>
 

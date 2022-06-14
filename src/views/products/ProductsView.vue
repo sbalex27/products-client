@@ -1,12 +1,15 @@
 <template>
-  <h1>Products</h1>
+  <div>
+    <h1>Products</h1>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "ProductsScreen",
-};
+
+}
 </script>
 
 <style>
+
 </style>

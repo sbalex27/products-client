@@ -5,7 +5,11 @@
       <b-alert show variant="danger">Ha ocurrido un error</b-alert>
     </div>
     <div v-else>
-      <b-table :items="products" :fields="fields"></b-table>
+      <b-table :items="products" :fields="fields">
+        <template #cell(actions)="data">
+          <b-button size="sm" :to="{ name: 'product-details', params: {id: data.item.id}}">View</b-button>
+        </template>
+      </b-table>
     </div>
   </div>
 </template>
@@ -14,7 +18,7 @@
 export default {
   data() {
     return {
-      fields: ["name", "value", "gain"],
+      fields: ["name", "value", "gain", "actions"],
       products: [],
       error: null,
     };

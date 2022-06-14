@@ -38,6 +38,12 @@ const routes = [
     path: '/categories',
     name: 'categories',
     component: () => import('../views/categories/CategoriesView.vue')
+  },
+  {
+    path: '/categories/:id',
+    name: 'category-details',
+    component: () => import('../views/categories/CategoryDetailsView.vue'),
+    props: true
   }
 ]
 

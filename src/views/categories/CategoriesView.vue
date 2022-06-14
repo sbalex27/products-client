@@ -7,7 +7,11 @@
       >
     </div>
     <div v-else>
-      <b-table :fields="fields" :items="categories"></b-table>
+      <b-table :fields="fields" :items="categories">
+        <template #cell(actions)="data">
+          <b-button size="sm" :to="{name: 'category-details', params: {'id': data.item.id}}">View</b-button>
+        </template>
+      </b-table>
     </div>
   </div>
 </template>
@@ -16,7 +20,7 @@
 export default {
   data() {
     return {
-      fields: ["name", "description"],
+      fields: ["name", "description", "actions"],
       categories: null,
       error: null,
     };

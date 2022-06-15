@@ -3,16 +3,33 @@
     <h1>Product Details</h1>
     <hr />
     <div v-if="error">
-      <b-alert show variant="danger"
-        >No se ha podido mostrar este producto</b-alert
-      >
+      <b-alert show variant="danger">
+        No se ha podido mostrar este producto
+      </b-alert>
     </div>
     <div v-else>
-        <p><strong>Nombre:</strong> {{product.name}}</p>
-        <p><strong>Valor:</strong> {{product.value}}</p>
-        <p><strong>Ganancia:</strong> {{product.gain}}</p>
-        <p><strong>Marca:</strong> {{product.brand.name}}</p>
-        <p><strong>Categoría:</strong> {{product.category.name}}</p>
+      <div><strong>Nombre:</strong> {{ product.name }}</div>
+      <div><strong>Valor:</strong> {{ product.value }}</div>
+      <div><strong>Ganancia:</strong> {{ product.gain }}</div>
+      <div>
+        <strong>Marca: </strong>
+        <router-link
+          :to="{ name: 'brand-details', params: { id: product.brand.id } }"
+        >
+          {{ product.brand.name }}</router-link
+        >
+      </div>
+      <div>
+        <strong>Categoría: </strong>
+        <router-link
+          :to="{
+            name: 'category-details',
+            params: { id: product.category.id },
+          }"
+        >
+          {{ product.category.name }}</router-link
+        >
+      </div>
     </div>
     <p></p>
   </div>
